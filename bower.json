@@ -1,6 +1,6 @@
 {
-  "name": "Ana-LoL-ics",
-  "version": "1.0.0",
+  "name": "Everything_Sports",
+  "version": "0.0.1",
   "dependencies": {
     "jquery": "~2.2.0",
     "d3": "~3.5.14"
