@@ -28,6 +28,7 @@
     "mongoose": "^4.5.5",
     "nodemon": "^1.8.0",
     "path": "^0.12.7",
+    "promise": "^8.0.2",
     "react": "^0.14.3",
     "react-dom": "^0.14.6",
     "react-router": "^2.5.0",

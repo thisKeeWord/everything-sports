@@ -13,11 +13,23 @@ class MainSite extends React.Component {
   componentDidMount() {
     const that = this;
     console.log('hello')
-    $.post('/info', res => {
-      that.setState({
-        main_info: res
-      });
-    });
+    //use fetch and promises
+    fetch('/info', {
+      method: 'POST'
+    })
+    .then((response) => {
+      return response.json();
+    })
+    .then((myJson) => {
+      console.log(JSON.stringify(myJson)), 'jason';
+      // that.setState({
+      //   main_info: myJson
+      // });
+      return JSON.stringify(myJson);
+    })
+    .then((more) => {
+      console.log(more, 'more');
+    })
   }
 
   render() {

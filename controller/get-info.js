@@ -8,7 +8,8 @@ function getData(req, res) {
   console.log('test')
   request(`https://newsapi.org/v2/top-headlines?sources=fox-sports&apiKey=${process.env.KEY}`, function(error, response) {
     if (error) return console.error(error);
-    console.log(JSON.parse(response.body));
+    console.log(JSON.parse(response.body))
+    res.send(JSON.parse(response.body));
   })
 }
 
