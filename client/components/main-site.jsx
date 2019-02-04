@@ -26,10 +26,7 @@ class MainSite extends React.Component {
       //   main_info: myJson
       // });
       return JSON.stringify(myJson);
-    })
-    .then((more) => {
-      console.log(more, 'more');
-    })
+    });
   }
 
   render() {
