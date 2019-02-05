@@ -18,15 +18,17 @@ class MainSite extends React.Component {
       method: 'POST'
     })
     .then((response) => {
+      console.log(response.body, 'response')
       return response.json();
     })
     .then((myJson) => {
-      console.log(JSON.stringify(myJson)), 'jason';
+      console.log(myJson, 'jason');
       // that.setState({
       //   main_info: myJson
       // });
       return JSON.stringify(myJson);
-    });
+    })
+    .catch(err => console.log(err));
   }
 
   render() {
