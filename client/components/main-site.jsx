@@ -28,7 +28,7 @@ class MainSite extends React.Component {
       // });
       return JSON.stringify(myJson);
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
   }
 
   render() {
