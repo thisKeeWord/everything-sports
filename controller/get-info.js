@@ -1,7 +1,7 @@
 const request = require('request');
 const rp = require('request-promise');
 const util = require('util');
-const urls = [`https://newsapi.org/v2/top-headlines?sources=fox-sports&apiKey=${process.env.KEY}`, `https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=${process.env.KEY}`];
+const urls = [`https://newsapi.org/v2/top-headlines?sources=fox-sports&apiKey=${process.env.KEY}`, `https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=${process.env.KEY}`, `https://newsapi.org/v2/top-headlines?sources=nfl-news&apiKey=${process.env.KEY}`];
 
 
 const controller = {
@@ -13,9 +13,14 @@ const stat = util.promisify(requestData);
 async function requestData(res) {
   console.log('wassup')
   let response = [];
-  response.push(JSON.parse(await rp(urls[0])));
+  // response.push(JSON.parse(await rp(urls[0])));
   // add stuff from url1 response to url2
-  response.push(JSON.parse(await rp(urls[1])));
+  // response.push(JSON.parse(await rp(urls[1])));
+  // response.push(JSON.parse(await rp(urls[2])));
+
+  for (let i = 0; i < urls.length; i++) {
+    response.push(JSON.parse(await rp(urls[i])));
+  }
 
   res.send(response);
   // add stuff from url2 response to url3
