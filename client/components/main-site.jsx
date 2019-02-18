@@ -23,9 +23,14 @@ class MainSite extends React.Component {
     })
     .then((myJson) => {
       console.log(myJson, 'jason');
-      // that.setState({
-      //   main_info: myJson
-      // });
+      const json_results = [];
+      for (let i = 0; i < myJson.length; i++) {
+        json_results.push(myJson[i].articles)
+      }
+      console.log(json_results)
+      that.setState({
+        main_info: json_results
+      });
       return JSON.stringify(myJson);
     })
     .catch(err => console.error(err));
